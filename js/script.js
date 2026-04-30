@@ -662,3 +662,72 @@ document.addEventListener("DOMContentLoaded", () => {
     placeSeparatedRandom();
   });
 });
+
+
+
+
+
+// ANIMACIÓN IMAGENES CON MOV. MOUSE)
+const container = document.getElementById("trail-container");
+if (!container) console.error("trail-container no existe");
+const images = [
+  "media/img/archive1.jpeg",
+  "media/img/archive2.jpeg",
+  "media/img/archive3.jpeg",
+  "media/img/archive4.jpeg",
+  "media/img/archive5.jpeg",
+  "media/img/archive6.jpeg",
+  "media/img/archive7.jpeg",
+  "media/img/archive8.jpeg",
+  "media/img/archive9.jpeg",
+  "media/img/archive10.jpeg",
+  "media/img/archive11.jpeg"
+];
+
+let lastX = 0;
+
+let lastY = 0;
+
+document.addEventListener("mousemove", (e) => {
+
+  const dx = e.clientX - lastX;
+
+  const dy = e.clientY - lastY;
+
+  const distance = Math.sqrt(dx * dx + dy * dy);
+
+  if (distance > 50) {
+
+    createTrailImage(e.clientX, e.clientY);
+
+    lastX = e.clientX;
+
+    lastY = e.clientY;
+
+  }
+
+});
+
+function createTrailImage(x, y) {
+  const img = document.createElement("img");
+  img.src = images[Math.floor(Math.random() * images.length)];
+  img.classList.add("trail-img");
+  img.style.left = x + "px";
+  img.style.top = y + "px";
+  if (container) {
+    container.appendChild(img);
+  }
+  setTimeout(() => {
+
+  img.style.transform = "translate(-50%, -50%) scale(0.2)";
+
+  img.style.opacity = "0";
+
+  setTimeout(() => {
+
+    img.remove();
+
+  }, 400);
+
+}, 200);
+}
