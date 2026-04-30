@@ -1,21 +1,21 @@
 @font-face {
-    font-family:"roc-grotesk-regular";
-    src: url('./fonts/Kostic\ -\ Roc\ Grotesk\ Regular.otf') format('opentype');
+    font-family:"ppmori-regular";
+    src: url('./fonts/PPMori-Regular.otf') format('opentype');
     font-display:auto;font-style:normal;font-weight:700;font-stretch:normal;
 }
 @font-face {
-    font-family:"roc-grotesk-bold";
-    src: url('./fonts/Kostic\ -\ Roc\ Grotesk\ Bold.otf') format('opentype');
+    font-family:"ppmori-semibold";
+    src: url('./fonts/PPMori-SemiBold.otf') format('opentype');
     font-display:auto;font-style:normal;font-weight:700;font-stretch:normal;
 }
 @font-face {
-    font-family:"roc-grotesk-wide-medium";
-    src: url('./fonts/Kostic\ -\ Roc\ Grotesk\ Wide\ Medium.otf') format('opentype');
+    font-family:"ppmori-regular-italic";
+    src: url('.//fonts/PPMori-RegularItalic.otf') format('opentype');
     font-display:auto;font-style:normal;font-weight:700;font-stretch:normal;
 }
 @font-face {
-    font-family:"roc-grotesk-extrawide-extrabold";
-    src: url('./fonts/Kostic\ -\ Roc\ Grotesk\ ExtraWide\ ExtraBold.otf') format('opentype');
+    font-family:"ppmori-semibold-italic";
+    src: url('./fonts/PPMori-SemiBoldItalic.otf') format('opentype');
     font-display:auto;font-style:normal;font-weight:700;font-stretch:normal;
 }
 
@@ -34,16 +34,21 @@
 
 :root {
     
-    --font-family-regular: 'roc-grotesk-regular', sans-serif;
-    --font-family-bold: 'roc-grotesk-bold', sans-serif;
-    --font-family-wide-medium: 'roc-grotesk-wide-medium', sans-serif;
-    --font-family-extrawide-extrabold: 'roc-grotesk-extrawide-extrabold', sans-serif;
+    --font-family-regular: 'ppmori-regular', sans-serif;
+    --font-family-bold: 'ppmori-semibold', sans-serif;
+    --font-family-wide-medium: 'ppmori-regular-italic', sans-serif;
+    --font-family-extrawide-extrabold: 'ppmori-semibold-italic', sans-serif;
 
 
     --green: #AEA349;
     --red: #EF3E24;
     --white: #FFFBF5;
     --black: black;
+
+    --softblack: rgb(12, 12, 12);
+    --grey: rgb(223, 221, 215);
+    --softwhite: rgb(244, 244, 244);
+
 
     --image-width: 100%;
     --image-height: 100%;
@@ -58,7 +63,7 @@ body {
     width: 100%;
     cursor: none;
     overflow-x: hidden;
-    background-color: var(--red) !important;
+    background-color: var(--softwhite) !important;
     color: var(--black) !important;
     font-family: var(--font-family-regular) !important;
 }
@@ -73,7 +78,7 @@ body {
   pointer-events: none;
   z-index: 99999;
 
-  background: white;
+  background: var(--softblack);
   mix-blend-mode: difference;
 }
 
@@ -94,24 +99,15 @@ p {
 }
 
 
-
-
 .content-red ::selection {
-  background: var(--red);
-  color: var(--white);
+  background: var(--softblack);
+  color: var(--softwhite);
 }
 
 .content-black ::selection {
   background: var(--black);
-  color: var(--white);
+  color: var(--softwhite);
 }
-
-
-
-
-
-
-
 
 
 
@@ -120,7 +116,7 @@ p {
 /* MENU
 ---------------------------------------------------------------------------------------------------------------- */
 .navbar-blur.navbar-on-header .peloteo {
-  font-family: var(--font-family-wide-medium) !important;
+  font-family: var(--font-family-regular) !important;
   margin-left: 1rem !important;
   color: var(--black);
 }
@@ -140,7 +136,7 @@ border: none !important;
 }
 
 .offcanvas {
-  background-color: var(--red) !important;
+  background-color: var(--softblack) !important;
   color: var(--black) !important;
   height: 100vh !important;
   transition: none !important;
@@ -166,11 +162,11 @@ border: none !important;
 
 .link-aspecto:hover {
   background-color: var(--black) !important;
-  color: var(--white) !important;
+  color: var(--softwhite) !important;
 }
 
 .link-aspecto h1:hover {
-  color: var(--white) !important;
+  color: var(--softwhite) !important;
 }
 
 .offcanvas .navbar-nav .nav-link h2 {
@@ -243,33 +239,33 @@ border: none !important;
 
 .project-body .navbar-blur.navbar-on-header,
 .page-about .navbar-blur.navbar-on-header {
-  color: var(--red) !important;
+  color: var(--s) !important;
 }
 
 .project-body h1,
 .page-about h1 {
-  color: var(--red) !important;
+  color: var(--softblack) !important;
 }
 
 .page-archive .navbar-blur.navbar-on-header h1{
-  color: var(--black) !important;
+  color: var(--softblack) !important;
 }
 
 
 .page-archive .navbar-blur h1 {
-  color: var(--white) !important;
+  color: var(--softwhite) !important;
 }
 
 .project-body .link-aspecto h1,
 .project-body .offcanvas-brand h1,
 .project-body .menu-close h1{
-  color: var(--black) !important;
+  color: var(--softblack) !important;
 }
 
 .project-body .link-aspecto h1:hover, 
 .content-black .link-aspecto h1:hover
 {
-  color: var(--white) !important;
+  color: var(--softwhite) !important;
 }
 
 
@@ -289,11 +285,11 @@ border: none !important;
 .hero {
   position: relative;
   height: calc(100svh - var(--footer-height, 0px));
-  background-color: var(--red);
+  background-color: var(--softwhite);
   overflow: hidden;
 }
 
-.hero-marquee {
+/* .hero-marquee {
   position: absolute;
   inset: 0;
   display: flex;
@@ -343,6 +339,16 @@ border: none !important;
   pointer-events: none;
   text-align: justify;
   font-family: var(--font-family-bold);
+} */
+
+.hero h1 {
+  text-align: center;
+}
+
+.hero {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 
@@ -446,13 +452,13 @@ body.work .archive {
 /* PROYECTO */
 .project-body {
   cursor: none;
-  background-color: var(--white) !important;
-  color: var(--red) !important;
+  background-color: var(--softwhite) !important;
+  color: var(--softwhite) !important;
   width: 100svw;
 }   
 
 .menu-red {
-  color: var(--red) !important;
+  color: var(--softblack) !important;
 }
 
 .header-invisible {
@@ -604,7 +610,7 @@ body.work .archive {
 
 .btn-exp {
 padding: 0.8rem;
-background-color: var(--red);
+background-color: var(--softblack);
 color: var(--black);
 border: 3px solid var(--black);
 }
@@ -612,14 +618,14 @@ border: 3px solid var(--black);
 .btn-exp.active {
 padding: 0.8rem;
 background-color: var(--black);
-color: var(--white);
+color: var(--softwhite);
 border: 3px solid var(--black);
 }
 
 .btn-view {
 margin: 0.5rem;
 padding: 0.8rem;
-background-color: var(--red);
+background-color: var(--softblack);
 color: var(--black);
 border: 3px solid var(--black);
 }
@@ -628,7 +634,7 @@ border: 3px solid var(--black);
 margin: 0.8rem;
 padding: 0.8rem;
 background-color: var(--black);
-color: var(--white);
+color: var(--softwhite);
 border: 3px solid var(--black);
 }
 
@@ -698,7 +704,11 @@ img.draggable:active {
   opacity: 1;
 }
 
-
+.quick {
+  display: flex;
+  justify-content: center;
+  padding: 6rem;
+}
 
 
 
@@ -735,7 +745,7 @@ body.work footer {
 }
 
 .project-body footer h1{
-  color: var(--red) !important;
+  color: var(--softblack) !important;
 }
 
 
@@ -750,8 +760,8 @@ body.work footer {
 /* ABOUT */
 .project-body {
   cursor: none;
-  background-color: var(--white) !important;
-  color: var(--red) !important;
+  background-color: var(--softwhite) !important;
+  color: var(--softblack) !important;
 }
 
 .about {
@@ -1059,7 +1069,7 @@ body.work footer {
     border: none;
     font-size: 2rem;
     line-height: 1;
-    color: var(--red);
+    color: var(--softblack);
 
     cursor: pointer;
   }
