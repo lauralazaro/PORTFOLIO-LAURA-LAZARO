@@ -46,7 +46,7 @@
     --black: black;
 
     --softblack: rgb(12, 12, 12);
-    --grey: rgb(223, 221, 215);
+    --grey: rgb(157, 157, 157);
     --softwhite: rgb(244, 244, 244);
 
 
@@ -84,6 +84,12 @@ body {
 
 a {
     text-decoration: none !important;
+    color: inherit !important;
+}
+
+a:hover {
+    /* text-decoration: underline !important; */
+    color: inherit !important;
 }
 
 h1 {
@@ -136,7 +142,7 @@ border: none !important;
 }
 
 .offcanvas {
-  background-color: var(--softblack) !important;
+  background-color: var(--softwhite) !important;
   color: var(--black) !important;
   height: 100vh !important;
   transition: none !important;
@@ -1176,4 +1182,10 @@ body.work footer {
   .cursor-ball {
     display: none;
   }
+}
+
+
+/* ABOUT - ES text styling */
+.about > div:first-child > h5:nth-of-type(2) {
+  color: var(--grey);
 }

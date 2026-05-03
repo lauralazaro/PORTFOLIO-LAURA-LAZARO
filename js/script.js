@@ -368,7 +368,6 @@ $(document).ready(function () {
 
     if (!target) return;
 
-
     if (isMobile) {
       $("body").addClass("project-open");
 
@@ -395,6 +394,13 @@ $(document).ready(function () {
     $(".project-content").empty();
   });
 
+  // Auto-open first project on load (desktop)
+  if (window.innerWidth > 767) {
+    const $firstProject = $('.project-link').first();
+    if ($firstProject.length) {
+      $firstProject.trigger('click');
+    }
+  }
 
 });
 
@@ -690,6 +696,17 @@ let lastY = 0;
 
 document.addEventListener("mousemove", (e) => {
 
+document.addEventListener("touchstart", (e) => {
+
+  if (document.body.classList.contains("offcanvas-open")) return;
+
+  const touch = e.touches[0];
+
+  createTrailImage(touch.clientX, touch.clientY);
+
+});
+
+if (document.body.classList.contains("offcanvas-open")) return;
   const dx = e.clientX - lastX;
 
   const dy = e.clientY - lastY;
@@ -709,25 +726,26 @@ document.addEventListener("mousemove", (e) => {
 });
 
 function createTrailImage(x, y) {
+
+  if (document.body.classList.contains("offcanvas-open")) return;
+
   const img = document.createElement("img");
   img.src = images[Math.floor(Math.random() * images.length)];
   img.classList.add("trail-img");
   img.style.left = x + "px";
   img.style.top = y + "px";
+
   if (container) {
     container.appendChild(img);
   }
-  setTimeout(() => {
-
-  img.style.transform = "translate(-50%, -50%) scale(0.2)";
-
-  img.style.opacity = "0";
 
   setTimeout(() => {
+    img.style.transform = "translate(-50%, -50%) scale(0.2)";
+    img.style.opacity = "0";
 
-    img.remove();
+    setTimeout(() => {
+      img.remove();
+    }, 400);
 
-  }, 400);
-
-}, 200);
+  }, 200);
 }
