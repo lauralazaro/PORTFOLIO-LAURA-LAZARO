@@ -398,6 +398,7 @@ border: none !important;
 
 .hero {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
 }
@@ -1230,4 +1231,16 @@ body.work footer {
 
 .page-archive main {
   flex: 1;
+}
+/* TOUCH TEXT PROMPT */
+.touch-text {
+  display: none;
+  text-align: center;
+  margin-top: 1rem;
+}
+
+@media (hover: none), (pointer: coarse) {
+  .touch-text {
+    display: block;
+  }
 }
