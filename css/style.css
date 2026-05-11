@@ -776,7 +776,7 @@ img.draggable:active {
 }
 
 .quick {
-  min-height: 90vh;
+  min-height: 8vh;
   display: flex;
   justify-content: center;
   padding: 6rem;

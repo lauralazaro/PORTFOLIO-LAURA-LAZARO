@@ -677,17 +677,31 @@ document.addEventListener("DOMContentLoaded", () => {
 const container = document.getElementById("trail-container");
 if (!container) console.error("trail-container no existe");
 const images = [
-  "media/img/archive1.jpeg",
-  "media/img/archive2.jpeg",
-  "media/img/archive3.jpeg",
-  "media/img/archive4.jpeg",
-  "media/img/archive5.jpeg",
-  "media/img/archive6.jpeg",
-  "media/img/archive7.jpeg",
-  "media/img/archive8.jpeg",
-  "media/img/archive9.jpeg",
-  "media/img/archive10.jpeg",
-  "media/img/archive11.jpeg"
+  "media/img/archive.jpg",
+  "media/img/archive-1.jpg",
+  "media/img/archive-2.jpg",
+  "media/img/archive-3.jpg",
+  "media/img/archive-4.jpg",
+  "media/img/archive-5.jpg",
+  "media/img/archive-6.jpg",
+  "media/img/archive-7.jpg",
+  "media/img/archive-8.jpg",
+  "media/img/archive-9.jpg",
+  "media/img/archive-10.jpg",
+  "media/img/archive-11.jpg",
+  "media/img/archive-12.jpg",
+  "media/img/archive-13.jpg",
+  "media/img/archive-14.jpg",
+  "media/img/archive-15.jpg",
+  "media/img/archive-16.jpg",
+  "media/img/archive-17.jpg",
+  "media/img/archive-18.jpg",
+  "media/img/archive-19.jpg",
+  "media/img/archive-20.jpg",
+  "media/img/archive-21.jpg",
+  "media/img/archive-22.jpg",
+  "media/img/archive-23.jpg",
+
 ];
 
 let lastX = 0;
