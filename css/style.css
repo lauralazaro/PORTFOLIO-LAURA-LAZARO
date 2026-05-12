@@ -633,7 +633,11 @@ body.work .archive {
 
 }
 
+.project-media {
 
+  padding-bottom: 2rem;
+
+}
 
 
 
@@ -1144,6 +1148,13 @@ body.work footer {
     color: var(--softblack);
 
     cursor: pointer;
+  }
+
+  .project-back-bottom {
+    position: static;
+    margin-top: 2rem;
+    align-self: flex-start;
+    text-align: left;
   }
 
   .project-back h2{
